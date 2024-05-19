@@ -1,0 +1,100 @@
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+          <a class="sidebar-brand brand-logo" href="{{ url_for('home') }}"><img src="/static/assets/images/logo.svg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="{{ url_for('home') }}"><img src="/static/assets/images/logo-mini.svg" alt="logo" /></a>
+        </div>
+        <ul class="nav">
+          <li class="nav-item nav-category">
+            <span class="nav-link">Navigation</span>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ url_for('home') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Beranda</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="mdi mdi-account-card-details"></i>
+              </span>
+              <span class="menu-title">Data Siswa</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/buttons.html">Data Siswa</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dropdowns.html">Dataset Siswa</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="/basic-elements.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-account-circle"></i>
+              </span>
+              <span class="menu-title">Data Guru</span>
+            </a>
+          </li>
+            <li class="nav-item menu-items">
+            <a class="nav-link" href="/basic-elements.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-book-open-variant"></i>
+              </span>
+              <span class="menu-title">Data Mata Pelajaran</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="/basic-table.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Data Detail Mengajar</span>
+            </a>
+          </li>
+            <li class="nav-item menu-items">
+            <a class="nav-link" href="/basic-table.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-codepen"></i>
+              </span>
+              <span class="menu-title">Data Kelas</span>
+            </a>
+          </li>
+            <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <span class="menu-icon">
+                <i class="mdi mdi-security"></i>
+              </span>
+              <span class="menu-title">Data Absensi</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/page-blank.html"> Siswa Hadir </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-404.html"> Tidak Hadir </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ url_for('users') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">Data User Login</span>
+            </a>
+          </li>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link"
+               target="_blank" 
+               href="https://appseed.us/support/">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Pengaturan</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
