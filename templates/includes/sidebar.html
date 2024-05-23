@@ -1,100 +1,102 @@
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="{{ url_for('home') }}"><img src="/static/assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="{{ url_for('home') }}"><img src="/static/assets/images/logo-mini.svg" alt="logo" /></a>
-        </div>
-        <ul class="nav">
-          <li class="nav-item nav-category">
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="{{ url_for('dashboard') }}"><img
+                src="/static/images/logo.svg"/></a>
+        <a class="sidebar-brand brand-logo-mini" href="{{ url_for('dashboard') }}"><img
+                src="/static/images/logo-mini.svg"/></a>
+    </div>
+    <ul class="nav">
+        <li class="nav-item nav-category">
             <span class="nav-link">Navigation</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url_for('home') }}">
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ url_for('dashboard') }}">
               <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
+                <i class="icon-home"></i>
               </span>
-              <span class="menu-title">Beranda</span>
+                <span class="menu-title">Beranda</span>
             </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#siswa" aria-expanded="false" aria-controls="siswa">
               <span class="menu-icon">
-                <i class="mdi mdi-account-card-details"></i>
+                <i class="icon-graduation"></i>
               </span>
-              <span class="menu-title">Data Siswa</span>
-              <i class="menu-arrow"></i>
+                <span class="menu-title">Data Siswa</span>
+                <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/buttons.html">Data Siswa</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/dropdowns.html">Dataset Siswa</a></li>
-              </ul>
+            <div class="collapse" id="siswa">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('siswa') }}">Data Siswa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('dataset') }}">Dataset Siswa</a></li>
+                </ul>
             </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="/basic-elements.html">
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="#">
               <span class="menu-icon">
-                <i class="mdi mdi-account-circle"></i>
+                <i class="icon-user-female"></i>
               </span>
-              <span class="menu-title">Data Guru</span>
+                <span class="menu-title">Data Guru</span>
             </a>
-          </li>
-            <li class="nav-item menu-items">
-            <a class="nav-link" href="/basic-elements.html">
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ url_for('mapel') }}">
               <span class="menu-icon">
-                <i class="mdi mdi-book-open-variant"></i>
+                <i class="icon-book-open"></i>
               </span>
-              <span class="menu-title">Data Mata Pelajaran</span>
+                <span class="menu-title">Data Mata Pelajaran</span>
             </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="/basic-table.html">
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="#">
               <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
+                <i class="icon-calendar"></i>
               </span>
-              <span class="menu-title">Data Detail Mengajar</span>
+                <span class="menu-title">Data Detail Mengajar</span>
             </a>
-          </li>
-            <li class="nav-item menu-items">
-            <a class="nav-link" href="/basic-table.html">
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ url_for('kelas') }}">
               <span class="menu-icon">
-                <i class="mdi mdi-codepen"></i>
+                <i class="icon-grid"></i>
               </span>
-              <span class="menu-title">Data Kelas</span>
+                <span class="menu-title">Data Kelas</span>
             </a>
-          </li>
-            <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#absensi" aria-expanded="false" aria-controls="absensi">
               <span class="menu-icon">
-                <i class="mdi mdi-security"></i>
+                <i class="icon-clock"></i>
               </span>
-              <span class="menu-title">Data Absensi</span>
-              <i class="menu-arrow"></i>
+                <span class="menu-title">Data Absensi</span>
+                <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/page-blank.html"> Siswa Hadir </a></li>
-                <li class="nav-item"> <a class="nav-link" href="/page-404.html"> Tidak Hadir </a></li>
-              </ul>
+            <div class="collapse" id="absensi">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="#"> Siswa Hadir </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> Tidak Hadir </a></li>
+                </ul>
             </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url_for('users') }}">
-              <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
-              </span>
-              <span class="menu-title">Data User Login</span>
-            </a>
-          </li>
+        </li>
+        {#          <li class="nav-item menu-items">#}
+        {#            <a class="nav-link" href="{{ url_for('users') }}">#}
+        {#              <span class="menu-icon">#}
+        {#                <i class="icon-people"></i>#}
+        {#              </span>#}
+        {#              <span class="menu-title">Data User Login</span>#}
+        {#            </a>#}
+        {#          </li>#}
 
-          <li class="nav-item menu-items">
+        <li class="nav-item menu-items">
             <a class="nav-link"
-               target="_blank" 
-               href="https://appseed.us/support/">
+               target="_blank"
+               href="#">
               <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
+                <i class="icon-settings"></i>
               </span>
-              <span class="menu-title">Pengaturan</span>
+                <span class="menu-title">Pengaturan</span>
             </a>
-          </li>
-        </ul>
-      </nav>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,59 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Data Siswa {% endblock %}
+
+{% block content %}
+    <div class="row ">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h4 class="card-title">Data Siswa</h4>
+                        <p class="text-muted mb-1 small">
+                            <a class="nav-link btn btn-success" href="{{ url_for('add_siswa') }}">+ Tambah Siswa</a>
+                        </p>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table dataTable no-footer" id="order-listing">
+                                    <thead>
+                                    <tr>
+                                        <th> Nomor</th>
+                                        <th> NIS</th>
+                                        <th> Nama Siswa</th>
+                                        <th> Tanggal Lahir</th>
+                                        <th> Jenis Kelamin</th>
+                                        <th> Kelas</th>
+                                        <th class="text-center"> Aksi</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for item in siswa %}
+                                        <tr>
+                                            <td class="text-center" style="width: 50px;">{{ loop.index }}</td>
+                                            <td>{{ item.nis }}</td>
+                                            <td>{{ item.nama_siswa }}</td>
+                                            <td>{{ item.tanggal_lahir }}</td>
+                                            <td>{{ item.jenis_kelamin }}</td>
+                                            <td>{{ item.id_kelas }}</td>
+
+                                            <td class="text-center" style="width: 200px;">
+                                                <a href="edit_siswa/{{ item.nis }}"
+                                                   class="btn btn-outline-primary">Edit</a>
+                                                <a href="delete_siswa/{{ item.nis }}"
+                                                   class="btn btn-outline-danger">Hapus</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

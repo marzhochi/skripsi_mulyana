@@ -1,14 +1,14 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Dashboard {% endblock %} 
+{% block title %} Data User Login {% endblock %}
 
 <!-- Specific Plugin CSS goes HERE -->
 {% block plugin_stylesheets %}
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="/static/assets/vendors/jvectormap/jquery-jvectormap.css">
-  <link rel="stylesheet" href="/static/assets/vendors/flag-icon-css/css/flag-icon.min.css">
-  <link rel="stylesheet" href="/static/assets/vendors/owl-carousel-2/owl.carousel.min.css">
-  <link rel="stylesheet" href="/static/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/static/vendors/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="/static/vendors/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="/static/vendors/owl-carousel-2/owl.carousel.min.css">
+  <link rel="stylesheet" href="/static/vendors/owl-carousel-2/owl.theme.default.min.css">
 {% endblock plugin_stylesheets %}
 
 <!-- Specific CSS goes HERE -->
@@ -56,10 +56,12 @@
                                       <label class="badge badge-info">{{ user.role }}</label>
                                   {% endif %}
                               </td>
-                              <td class="w-25 text-center">
-                                  <a href="{{url_for('edit', userid=user.userid)}}" class="btn btn-outline-primary">Edit</a>
+                              <td class="w-25 text-right">
+                                  <a href="{{url_for('edit_user', userid=user.userid)}}" class="btn btn-outline-primary">Edit</a>
                                   <a href="{{url_for('password_change', userid=user.userid)}}" class="btn btn-outline-info">Ganti Password</a>
-                                  <a href="{{url_for('delete', userid=user.userid)}}" class="btn btn-outline-danger">Hapus</a>
+                                  {% if user.role == 'guru' %}
+                                  <a href="{{url_for('hapus_user', userid=user.userid)}}" class="btn btn-outline-danger">Hapus</a>
+                                  {% endif %}
                               </td>
                             </tr>
                           {% endfor %}
@@ -79,17 +81,17 @@
 <!-- Specific Plugin JS goes HERE  -->
 {% block plugin_javascripts %}
 
-  <script src="/static/assets/vendors/chart.js/Chart.min.js"></script>
-  <script src="/static/assets/vendors/progressbar.js/progressbar.min.js"></script>
-  <script src="/static/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-  <script src="/static/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="/static/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+  <script src="/static/vendors/chart.js/Chart.min.js"></script>
+  <script src="/static/vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="/static/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+  <script src="/static/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="/static/vendors/owl-carousel-2/owl.carousel.min.js"></script>
 
 {% endblock plugin_javascripts %}
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 
-  <script src="/static/assets/js/dashboard.js"></script>
+  <script src="/static/js/dashboard.js"></script>
 
 {% endblock javascripts %}

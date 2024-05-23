@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Data Kelas {% endblock %}
+
+{% block content %}
+    <div class="row ">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex flex-row justify-content-between">
+                        <h4 class="card-title">Data Kelas</h4>
+                        <p class="text-muted mb-1 small">
+                            <a class="nav-link btn btn-success" href="{{ url_for('add_kelas') }}">+ Tambah Kelas</a>
+                        </p>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table dataTable no-footer" id="order-listing">
+                                    <thead>
+                                    <tr>
+                                        <th> Nomor</th>
+                                        <th> Nama Kelas</th>
+                                        <th class="text-center"> Aksi</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for item in kelas %}
+                                        <tr>
+                                            <td class="text-center" style="width: 50px;">{{ loop.index }}</td>
+                                            <td>{{ item.nama_kelas }}</td>
+                                            <td class="text-center" style="width: 200px;">
+                                                <a href="edit_kelas/{{ item.id_kelas }}"
+                                                   class="btn btn-outline-primary">Edit</a>
+                                                <a href="delete_kelas/{{ item.id_kelas }}"
+                                                   class="btn btn-outline-danger">Hapus</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
